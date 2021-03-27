@@ -1,0 +1,4 @@
+DATABASE:
+  URL: postgres://gatnpavznhkrvy:3586f620cc22d3044d9338b41df4386564af9a5e29f0be0a627505a3572131e4@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/deg9doo9dknblt
+  SYNCHRONIZE: true
+
