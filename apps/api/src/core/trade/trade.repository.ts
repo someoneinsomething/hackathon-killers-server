@@ -32,15 +32,19 @@ export class TradeRepository extends Repository<TradeEntity> {
     };
   }
 
-  async getTradeHoursStatistics(from: string, to: string): Promise<any> {
+  async getTradeProfitList(pagination: PaginationInterface): Promise<any> {
+    const { skip, take } = pagination;
+
     const query = this.createQueryBuilder('trade');
 
-    query.where(
-      `trade."createDate" >= '${from}:00.000000' AND trade."createDate" < '${to}:00.000000'`,
-    );
+    query.orderBy('trade.createDate', 'DESC');
 
-    const list = await query.getMany();
+    const [list] = await query.getManyAndCount();
 
-    return list;
+    return {
+      list,
+      take,
+      skip,
+    };
   }
 }

@@ -10,31 +10,8 @@ export class TradeController {
   getTradeStatistics(
     @Query('skip') skip: number,
     @Query('take') take: number,
+    @Query('profit') profit: string,
   ): Promise<string> {
-    return this.tradeService.getTradeStatistics(skip, take);
-  }
-
-  @Get('/statistics/hours')
-  getProfitHoursStatistics(
-    @Query('date') date: string,
-    @Query('timezone') timezone: number,
-  ): Promise<any> {
-    return this.tradeService.getTradeHoursStatistics(date, timezone);
-  }
-
-  @Get('/statistics/days')
-  getProfitDaysStatistics(
-    @Query('date') date: string,
-    @Query('timezone') timezone: number,
-  ): Promise<any> {
-    return this.tradeService.getTradeDaysStatistics(date, timezone);
-  }
-
-  @Get('/statistics/months')
-  getProfitMonthsStatistics(
-    @Query('date') date: string,
-    @Query('timezone') timezone: number,
-  ): Promise<any> {
-    return this.tradeService.getTradeMonthsStatistics(date, timezone);
+    return this.tradeService.getTradeStatistics(skip, take, profit);
   }
 }
