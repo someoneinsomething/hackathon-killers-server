@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 import { ConfigModule } from '@nestjs/config';
-import { CourseModule } from './core/course/course.module';
+import { SettingsModule } from './core/settings/settings.module';
+import { TradeModule } from './core/trade/trade.module';
 
 @Module({
   providers: [],
@@ -12,7 +13,8 @@ import { CourseModule } from './core/course/course.module';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot(typeOrmConfig),
-    CourseModule,
+    SettingsModule,
+    TradeModule,
   ],
 })
 export class AppModule {}
