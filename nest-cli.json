@@ -16,6 +16,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/api/tsconfig.app.json"
       }
+    },
+    "observe": {
+      "type": "observe",
+      "root": "apps/observe",
+      "entryFile": "main",
+      "sourceRoot": "apps/observe/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/observe/tsconfig.app.json"
+      }
     }
   }
 }
