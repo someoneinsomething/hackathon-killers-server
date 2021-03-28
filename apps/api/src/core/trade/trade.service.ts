@@ -5,7 +5,6 @@ import { ObserveService } from 'apps/observe/src/core/observe/observe.service';
 import { TradeRepository } from './trade.repository';
 import { PaginationInterface } from '../../interfaces/pagination.interface';
 import { SettingsService } from '../settings/settings.service';
-import { TradeEntity } from './trade.entity';
 
 @Injectable()
 export class TradeService {
@@ -117,7 +116,10 @@ export class TradeService {
     return {
       list: {
         ...trades,
-        amount: performedTrades.filter(item => !!item).length,
+        amount:
+          profit === 'true'
+            ? performedTrades.filter(item => !!item).length
+            : trades.amount,
         list: performedTrades.filter(item => !!item),
       },
       data: {
