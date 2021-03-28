@@ -77,6 +77,7 @@ export class TradeService {
 
         const binanceAsk =
           calculatedAmountAsk * ethUsdtCourse * this.commission;
+
         const binanceBid =
           calculatedAmountBid * tokenUsdtCourseDepthBid * this.commission;
 
